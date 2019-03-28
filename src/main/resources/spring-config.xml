@@ -86,6 +86,6 @@
     <!-- 开启aop 使用AspectJ去管理事务 -->
     <!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
     
-    <bean id="AspectJTransaction" class="com.transaction.config.AspectJTransaction"></bean>
+    <!-- <bean id="AspectJTransaction" class="com.transaction.config.AspectJTransaction"></bean> -->
     
 </beans>
