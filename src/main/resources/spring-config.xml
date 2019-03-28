@@ -69,7 +69,7 @@
 
 	<!-- 使用AspectJ 设置事务 -->
 	<!-- 注册事务通知 -->
-	<tx:advice id="txAdvice" transaction-manager="myTxManager" >
+ 	<tx:advice id="txAdvice" transaction-manager="myTxManager" >
 		<tx:attributes>
 			<!-- 指定在连接点方法上应用的事务属性 -->
 			<tx:method name="open*" isolation="DEFAULT" propagation="REQUIRED" />
@@ -79,8 +79,13 @@
     <!-- AOP配置 -->
     <aop:config>
     	<!-- 指定切入点 -->
-    	<aop:pointcut expression="execution(* *..service.*.*(..))" id="stockPointCut" />
+    	<aop:pointcut id="stockPointCut" expression="execution(* com.transaction.service.*.*(..))" />
     	<aop:advisor advice-ref="txAdvice" pointcut-ref="stockPointCut" />
-    </aop:config>  
+    </aop:config> 
+    
+    <!-- 开启aop 使用AspectJ去管理事务 -->
+    <!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
+    
+    <bean id="AspectJTransaction" class="com.transaction.config.AspectJTransaction"></bean>
     
 </beans>

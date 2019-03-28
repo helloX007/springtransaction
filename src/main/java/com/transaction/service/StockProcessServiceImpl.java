@@ -25,7 +25,6 @@ public class StockProcessServiceImpl implements IStockProcessService {
 //	@Transactional(isolation=Isolation.DEFAULT, propagation=Propagation.REQUIRED)/*使用SpringAOP注解设置事务*/
 	public void openAccount(String aname, double money) {
 		accountDao.insertAccount(aname, money);
-
 	}
 
 	@Override
