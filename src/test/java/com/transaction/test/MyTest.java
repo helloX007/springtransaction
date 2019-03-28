@@ -35,12 +35,18 @@ public class MyTest {
 	}
 	*/
 	
+	/*
+	 * 往数据库中初始化金额和商品数量
+	 */
 	@Test
 	public void testOpen(){
 		service.openAccount("Alex", 1000);
 		service.openStock("Nubia", 100);
 	}
 	
+	/*
+	 * 测试购票事务回滚
+	 */
 	@Test
 	public void testBuyStock() throws StockException{
 		service.buyStock("Alex", 1000, "Nubia", 100);
